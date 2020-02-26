@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM arm32v7/alpine:latest
 MAINTAINER Fabio Rapposelli <fabio@rapposelli.org>
 
 #We need to install bash to easily handle arrays
