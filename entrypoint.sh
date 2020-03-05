@@ -35,7 +35,7 @@ fi
 # Default other parameters
 
 SERVER=""
-[ -n "${STAGING:-}" ] && SERVER="--server https://acme-staging.api.letsencrypt.org/directory"
+[ -n "${STAGING:-}" ] && SERVER="--server https://acme-staging-v02.api.letsencrypt.org/directory"
 
 # Generate strong DH parameters for nginx, if they don't already exist.
 if [ ! -f /etc/ssl/dhparams.pem ]; then
