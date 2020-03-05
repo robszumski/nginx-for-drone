@@ -1,4 +1,4 @@
-FROM arm32v7/alpine:latest
+FROM alpine:latest
 MAINTAINER Fabio Rapposelli <fabio@rapposelli.org>
 
 #We need to install bash to easily handle arrays
@@ -7,6 +7,7 @@ RUN apk add --update nginx bash \
   python python-dev py-pip \
   gcc musl-dev linux-headers \
   augeas-dev openssl openssl-dev libffi-dev ca-certificates dialog \
+  certbot \
   && rm -rf /var/cache/apk/*
 
 RUN chown -R nginx:nginx /var/lib/nginx/

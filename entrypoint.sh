@@ -115,7 +115,7 @@ fi
     echo "The SAN list has changed, removing the old certificate and ask for a new one."
     rm -rf /etc/letsencrypt/{live,archive,keys,renewal}
 
-   echo "letsencrypt certonly "${letscmd}" \
+   echo "certbot certonly "${letscmd}" \
     --standalone \
     "${SERVER}" \
     --email "${EMAIL}" --agree-tos \
@@ -133,7 +133,7 @@ echo "${DOMAIN}" > /etc/letsencrypt/san_list
   set -euo pipefail
 
   # Certificate reissue
-  letsencrypt certonly --force-renewal \
+  certbot certonly --force-renewal \
     --webroot \
     -w /etc/letsencrypt/webrootauth/ \
     ${letscmd} \
