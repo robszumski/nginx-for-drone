@@ -40,6 +40,14 @@ Launch your backend container and note its name, then launch `gtaylor/nginx-for-
             [five certificates per domain per seven days](https://community.letsencrypt.org/t/public-beta-rate-limits/4772/3),
             which (as I discovered the hard way) you can quickly exhaust by debugging unrelated problems!
  * `-v {PATH_TO_CONFIGS}:/configs:ro` specify manual configurations for select domains.  Must be in the form {DOMAIN}.conf to be recognized.
+ 
+### Manually reissue certs
+
+Trigger cron job manually if your container doesn't stick around for a week or month:
+
+```
+$ crictl exec -ti e36571b606530 /bin/bash /etc/periodic/weekly/reissue
+```
 
 ### Using more than one backend service
 
